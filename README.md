@@ -78,6 +78,20 @@ The workflow is based on the official Tauri GitHub pipeline guidance and `tauri-
 - [Tauri GitHub pipeline docs](https://v2.tauri.app/distribute/pipelines/github/)
 - [tauri-apps/tauri-action](https://github.com/tauri-apps/tauri-action)
 
+## Downloads
+
+Latest release page:
+- [Desktop2FA Releases](https://github.com/agent6/Desktop2fa/releases/latest)
+
+Direct download links for the primary desktop installers:
+- macOS DMG: [Desktop2FA-darwin-aarch64.dmg](https://github.com/agent6/Desktop2fa/releases/latest/download/Desktop2FA-darwin-aarch64.dmg)
+- Windows MSI: [Desktop2FA-windows-x86_64.msi](https://github.com/agent6/Desktop2fa/releases/latest/download/Desktop2FA-windows-x86_64.msi)
+- Linux AppImage: [Desktop2FA-linux-x86_64.AppImage](https://github.com/agent6/Desktop2fa/releases/latest/download/Desktop2FA-linux-x86_64.AppImage)
+
+Additional release artifacts may also be present depending on the platform runner:
+- Windows setup EXE: `Desktop2FA-windows-x86_64-setup.exe`
+- Linux Debian package: `Desktop2FA-linux-x86_64.deb`
+
 ## GitHub Release Checklist
 
 Before uploading this repository to GitHub:
