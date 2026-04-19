@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  color: #1e293b;
+  background: #f8fafc;
+  color-scheme: light;
+  font-family:
+    "IBM Plex Sans",
+    "Avenir Next",
+    "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: #f8fafc;
+}
+
+html[data-window="main"],
+body[data-window="main"],
+body[data-window="main"] #root,
+html[data-window="settings"],
+body[data-window="settings"],
+body[data-window="settings"] #root,
+html[data-window="account-editor"],
+body[data-window="account-editor"],
+body[data-window="account-editor"] #root {
+  overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.mini-app-shell {
+  min-height: 100%;
+  width: 100%;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.mini-app-panel {
+  width: 100%;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.mini-app-list {
+  max-height: 520px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.settings-app {
+  min-height: 100%;
+  background: #f8fafc;
+}
+
+.settings-shell {
+  min-height: calc(100vh - 2rem);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.settings-list-app,
+.account-editor-app {
+  width: 100%;
+  background: #f8fafc;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.account-editor-app {
+  height: 100%;
+  overflow: hidden;
+}
+
+.settings-list-shell,
+.account-editor-shell {
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.mono-code {
+  font-family:
+    "IBM Plex Mono",
+    "SFMono-Regular",
+    "Cascadia Code",
+    monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid rgb(226 232 240);
+  background: rgb(248 250 252);
+  padding: 0.7rem 0.85rem;
+  color: rgb(51 65 85);
+  outline: none;
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease;
+}
+
+.field:focus {
+  border-color: rgb(148 163 184);
+  background: white;
+}
