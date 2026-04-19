@@ -88,6 +88,15 @@ Direct download links for the primary desktop installers:
 - Windows MSI: [Desktop2FA-windows-x86_64.msi](https://github.com/agent6/Desktop2fa/releases/latest/download/Desktop2FA-windows-x86_64.msi)
 - Linux AppImage: [Desktop2FA-linux-x86_64.AppImage](https://github.com/agent6/Desktop2fa/releases/latest/download/Desktop2FA-linux-x86_64.AppImage)
 
+These links will return `404` until the first GitHub Release exists. To publish them:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+After the GitHub Actions release workflow finishes, the release page and direct download links above should resolve.
+
 Additional release artifacts may also be present depending on the platform runner:
 - Windows setup EXE: `Desktop2FA-windows-x86_64-setup.exe`
 - Linux Debian package: `Desktop2FA-linux-x86_64.deb`
