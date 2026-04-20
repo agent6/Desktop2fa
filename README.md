@@ -108,9 +108,16 @@ Before uploading this repository to GitHub:
 1. Create the GitHub repository.
 2. Push this project.
 3. In the repository settings, allow GitHub Actions to have `Read and write permissions`.
-4. Push a version tag such as `v0.1.0`.
-5. Wait for the `release` workflow to finish.
-6. Review the generated GitHub Release and publish it.
+4. For a macOS download that opens cleanly on other Macs, add these GitHub Actions secrets:
+   - `APPLE_CERTIFICATE`
+   - `APPLE_CERTIFICATE_PASSWORD`
+   - `KEYCHAIN_PASSWORD`
+   - and either:
+     - `APPLE_ID`, `APPLE_PASSWORD`, `APPLE_TEAM_ID`
+     - or `APPLE_API_KEY`, `APPLE_API_ISSUER`
+5. Push a version tag such as `v0.1.0`.
+6. Wait for the `release` workflow to finish.
+7. Review the generated GitHub Release.
 
 ## Expected Release Artifacts
 
@@ -123,3 +130,7 @@ Depending on the runner and platform packaging support, the release will include
 ## Security Note
 
 Desktop2FA now stores secrets in an encrypted local vault instead of macOS Keychain. That removes repeated Keychain prompts, but it is a different security model than OS-native credential storage.
+
+## macOS Distribution Note
+
+macOS browser downloads are subject to Gatekeeper. A public DMG built without Apple signing and notarization can be flagged as damaged or blocked from launching. The included GitHub Actions workflow supports proper macOS signing/notarization, but it requires the Apple secrets listed above.
