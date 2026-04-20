@@ -557,7 +557,7 @@ pub fn run() {
         .plugin(
             PluginBuilder::<tauri::Wry, ()>::new("lifecycle")
                 .on_event(|app, event| {
-                    if let RunEvent::Reopen { .. } = event {
+                    if let RunEvent::Opened { .. } = event {
                         let _ = show_main_window_impl(app);
                     }
                 })
