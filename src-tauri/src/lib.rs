@@ -11,10 +11,9 @@ use serde_json::json;
 use std::collections::HashMap;
 use std::sync::Mutex;
 use std::time::{SystemTime, UNIX_EPOCH};
-use tauri::plugin::Builder as PluginBuilder;
 use tauri::menu::{MenuBuilder, SubmenuBuilder};
 use tauri::tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent};
-use tauri::{AppHandle, Emitter, LogicalSize, Manager, RunEvent, Size, State, WebviewUrl, WebviewWindowBuilder};
+use tauri::{AppHandle, Emitter, LogicalSize, Manager, Size, State, WebviewUrl, WebviewWindowBuilder};
 use tauri_plugin_store::StoreExt;
 use totp_logic::{format_code, normalize_payload, seconds_remaining};
 
@@ -554,15 +553,6 @@ pub fn run() {
             }
             _ => {}
         })
-        .plugin(
-            PluginBuilder::<tauri::Wry, ()>::new("lifecycle")
-                .on_event(|app, event| {
-                    if let RunEvent::Opened { .. } = event {
-                        let _ = show_main_window_impl(app);
-                    }
-                })
-                .build(),
-        )
         .setup(|app| {
             #[cfg(desktop)]
             app.handle()
