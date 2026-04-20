@@ -56,6 +56,6 @@ jobs:
           releaseName: Desktop2FA ${{ github.ref_name }}
           releaseBody: |
             Desktop2FA release ${{ github.ref_name }}
-          releaseDraft: true
+          releaseDraft: false
           prerelease: false
           releaseAssetNamePattern: "[name]-[platform]-[arch][setup][ext]"
